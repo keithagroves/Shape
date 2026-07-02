@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 720 1000 380" font-family="'Arial Rounded MT Bold','Nunito','Quicksand','Verdana',sans-serif">
+  <!-- wordmark -->
+  <g fill="#4A5265" font-weight="900" font-size="185" letter-spacing="10">
+    <text x="205" y="935">SH</text>
+    <text x="705" y="935">PE</text>
+  </g>
+  <!-- teal arch standing in for the "A", sized to cap height -->
+  <path d="M 518 908 C 540 838 565 814 589 814 C 613 814 638 838 660 908"
+        fill="none" stroke="#2CD5C4" stroke-width="46" stroke-linecap="round"/>
+  <!-- subtitle -->
+  <text x="591" y="1045" text-anchor="middle" fill="#4A5265"
+        font-weight="700" font-size="58" letter-spacing="24">INTELLIGENCE</text>
+</svg>

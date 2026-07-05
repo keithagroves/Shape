@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shape Intelligence
 
-## Getting Started
+Shape Intelligence is an AI lab and product studio. The gap between a promising model and a tool someone reaches for every day is where most of the work lives, so that's where we spend our time.
 
-First, run the development server:
+**Live site:** https://keithagroves.github.io/Shape/
+
+## Research
+
+The parts of intelligence without clean answers yet — reasoning, memory, and how systems stay reliable once they leave the benchmark. Everything here is chosen because a product downstream needs the answer.
+
+1. **Reasoning under uncertainty** — getting models to know what they don't know, and to act sensibly when the ground is shifting.
+2. **Long-horizon memory** — systems that carry context across days and tasks instead of forgetting the moment the window fills.
+3. **Evaluation that means something** — measuring the behavior you actually care about, not the proxy that happens to be easy to score.
+4. **Human-model interaction** — the design questions that decide whether a capable model becomes a tool people trust.
+
+## Products
+
+Research earns its keep when it ships. Everything we learn feeds directly into tools people put in front of real work.
+
+- **Platform** — the core models and APIs teams build on, tuned for reliability over demos.
+- **Applications** — end-to-end products for the workflows where good AI changes the day-to-day.
+- **Partnerships** — we take on a small number of hard problems with teams who own the domain.
+
+## Principles
+
+Small team. Long attention span.
+
+- **Research and product at one table** — no handoff between the people who study the models and the people who ship them. Same room, same roadmap.
+- **Reliability is the feature** — a model that's right 99% of the time and honest about the other 1% beats one that's impressive and unpredictable.
+- **Slow is smooth** — we'd rather ship one thing that holds up than ten that impress for a week.
+
+That's the whole idea behind the name: taking raw capability and giving it a shape someone can hold.
+
+## Development
+
+This is a [Next.js](https://nextjs.org) app.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open http://localhost:3000 — the main page lives in `app/page.tsx`. Pushes to `main` deploy to GitHub Pages.

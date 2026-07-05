@@ -1,4 +1,5 @@
 import Image from "next/image";
+import logo from "../../public/shape-intelligence-logo-centered.svg";
 
 const research = [
   {
@@ -83,13 +84,7 @@ export default function Home() {
       <header className="sticky top-0 z-10 bg-white/85 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3.5">
           <a href="/" className="flex items-center" aria-label="Shape Intelligence home">
-            <Image
-              src="/shape-intelligence-logo-centered.svg"
-              alt="Shape Intelligence"
-              width={132}
-              height={50}
-              priority
-            />
+            <Image src={logo} alt="Shape Intelligence" width={132} height={50} priority />
           </a>
           <nav className="hidden items-center gap-10 font-mono text-xs uppercase tracking-[0.15em] text-muted sm:flex">
             <a href="#research" className="transition-colors hover:text-foreground">Research</a>
@@ -263,7 +258,7 @@ export default function Home() {
 
       <footer className="border-t border-foreground/10">
         <div className="mx-auto flex w-full max-w-6xl flex-col justify-between gap-8 px-6 py-10 sm:flex-row sm:items-center">
-          <Image src="/shape-intelligence-logo-centered.svg" alt="Shape Intelligence" width={110} height={42} />
+          <Image src={logo} alt="Shape Intelligence" width={110} height={42} />
           <nav className="flex gap-8 font-mono text-xs uppercase tracking-[0.15em] text-muted">
             <a href="#research" className="transition-colors hover:text-foreground">Research</a>
             <a href="#products" className="transition-colors hover:text-foreground">Products</a>

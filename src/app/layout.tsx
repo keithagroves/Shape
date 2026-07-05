@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   title: "Shape Intelligence — AI research and products",
   description:
     "Shape Intelligence builds AI research and products, from the models up to the interfaces people actually use.",
-  icons: {
-    icon: "/shape-intelligence-logo-centered.svg",
-  },
 };
 
 export default function RootLayout({

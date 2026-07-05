@@ -125,7 +125,7 @@ export default function Home() {
 
           <div className="mx-auto w-full max-w-6xl px-6 pb-24 pt-28 sm:pb-32 sm:pt-40">
             <p className="mb-8 font-mono text-xs uppercase tracking-[0.25em] text-brand-deep">
-              AI Research &amp; Products
+              Shaping the future of AI
             </p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-7xl">
               Models, Products, Research
@@ -147,7 +147,7 @@ export default function Home() {
                   href="#products"
                   className="flex h-11 items-center justify-center rounded-full border border-foreground/15 px-6 text-sm font-medium transition-colors hover:border-foreground/30 hover:bg-foreground/[.03]"
                 >
-                  See the work
+                  Products
                 </a>
               </div>
             </div>

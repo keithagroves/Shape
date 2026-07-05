@@ -128,7 +128,7 @@ export default function Home() {
               AI Research &amp; Products
             </p>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-7xl">
-              We build the models, and the products people use them through.
+              Models, Products, Research
             </h1>
             <div className="mt-12 flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
               <p className="max-w-xl text-lg leading-8 text-muted">

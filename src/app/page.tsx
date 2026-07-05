@@ -1,88 +1,210 @@
 import Image from "next/image";
 
+const research = [
+  {
+    index: "01",
+    title: "Reasoning under uncertainty",
+    body: "Getting models to know what they don't know, and to act sensibly when the ground is shifting.",
+  },
+  {
+    index: "02",
+    title: "Long-horizon memory",
+    body: "Systems that carry context across days and tasks instead of forgetting the moment the window fills.",
+  },
+  {
+    index: "03",
+    title: "Evaluation that means something",
+    body: "Measuring the behavior you actually care about, not the proxy that happens to be easy to score.",
+  },
+  {
+    index: "04",
+    title: "Human-model interaction",
+    body: "The design questions that decide whether a capable model becomes a tool people trust.",
+  },
+];
+
+const products = [
+  {
+    index: "01",
+    title: "Platform",
+    body: "The core models and APIs teams build on, tuned for reliability over demos.",
+  },
+  {
+    index: "02",
+    title: "Applications",
+    body: "End-to-end products for the workflows where good AI changes the day-to-day.",
+  },
+  {
+    index: "03",
+    title: "Partnerships",
+    body: "We take on a small number of hard problems with teams who own the domain.",
+  },
+];
+
+const principles = [
+  {
+    title: "Research and product at one table",
+    body: "No handoff between the people who study the models and the people who ship them. Same room, same roadmap.",
+  },
+  {
+    title: "Reliability is the feature",
+    body: "A model that's right 99% of the time and honest about the other 1% beats one that's impressive and unpredictable.",
+  },
+  {
+    title: "Slow is smooth",
+    body: "We'd rather ship one thing that holds up than ten that impress for a week.",
+  },
+];
+
+function SectionLabel({
+  index,
+  children,
+  onDark = false,
+}: {
+  index: string;
+  children: React.ReactNode;
+  onDark?: boolean;
+}) {
+  return (
+    <div
+      className={`flex items-baseline gap-3 font-mono text-xs uppercase tracking-[0.2em] ${
+        onDark ? "text-white/60" : "text-muted"
+      }`}
+    >
+      <span className={onDark ? "text-brand" : "text-brand-deep"}>{index}</span>
+      <span>{children}</span>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 font-sans text-foreground">
-      <header className="sticky top-0 z-10 border-b border-black/[.06] bg-white/80 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
+      <header className="sticky top-0 z-10 bg-white/85 backdrop-blur-md">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3.5">
           <a href="/" className="flex items-center" aria-label="Shape Intelligence home">
-            <Image src="/shape-intelligence-logo-centered.svg" alt="Shape Intelligence" width={150} height={57} priority />
+            <Image
+              src="/shape-intelligence-logo-centered.svg"
+              alt="Shape Intelligence"
+              width={132}
+              height={50}
+              priority
+            />
           </a>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-muted sm:flex">
-            <a href="#research" className="hover:text-foreground">Research</a>
-            <a href="#products" className="hover:text-foreground">Products</a>
-            <a href="#approach" className="hover:text-foreground">Approach</a>
+          <nav className="hidden items-center gap-10 font-mono text-xs uppercase tracking-[0.15em] text-muted sm:flex">
+            <a href="#research" className="transition-colors hover:text-foreground">Research</a>
+            <a href="#products" className="transition-colors hover:text-foreground">Products</a>
+            <a href="#principles" className="transition-colors hover:text-foreground">Principles</a>
           </nav>
           <a
             href="#contact"
-            className="rounded-full bg-brand-solid px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-solid-dark"
+            className="rounded-full bg-foreground px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-foreground/85"
           >
-            Get in touch
+            Join us
           </a>
         </div>
       </header>
 
       <main className="flex-1">
         {/* Hero */}
-        <section className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
-          <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-brand-solid">
-            AI research &amp; products
-          </p>
-          <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-6xl">
-            We build the models, and the products people use them through.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-            Shape Intelligence is an AI lab and product studio. We do the research, then we ship
-            the thing. The gap between a promising model and a tool someone reaches for every day is
-            where most of the work lives, so that&apos;s where we spend our time.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#products"
-              className="flex h-12 items-center justify-center rounded-full bg-foreground px-7 text-sm font-medium text-white transition-colors hover:bg-black/80"
-            >
-              See what we&apos;re building
-            </a>
-            <a
-              href="#research"
-              className="flex h-12 items-center justify-center rounded-full border border-black/[.12] px-7 text-sm font-medium transition-colors hover:border-black/[.24] hover:bg-black/[.03]"
-            >
-              Read the research
-            </a>
+        <section className="relative overflow-hidden border-b border-foreground/10">
+          {/* faint arch motif echoing the logo */}
+          <svg
+            aria-hidden
+            className="pointer-events-none absolute -right-24 -top-40 h-[560px] w-[560px] text-brand opacity-[0.08]"
+            viewBox="0 0 200 200"
+            fill="none"
+          >
+            <path
+              d="M 30 180 C 55 60 75 20 100 20 C 125 20 145 60 170 180"
+              stroke="currentColor"
+              strokeWidth="26"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          <div className="mx-auto w-full max-w-6xl px-6 pb-24 pt-28 sm:pb-32 sm:pt-40">
+            <p className="mb-8 font-mono text-xs uppercase tracking-[0.25em] text-brand-deep">
+              AI Research &amp; Products
+            </p>
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-7xl">
+              We build the models, and the products people use them through.
+            </h1>
+            <div className="mt-12 flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
+              <p className="max-w-xl text-lg leading-8 text-muted">
+                Shape Intelligence is an AI lab and product studio. The gap between a promising
+                model and a tool someone reaches for every day is where most of the work lives, so
+                that&apos;s where we spend our time.
+              </p>
+              <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+                <a
+                  href="#research"
+                  className="flex h-11 items-center justify-center rounded-full bg-foreground px-6 text-sm font-medium text-white transition-colors hover:bg-foreground/85"
+                >
+                  Read the research
+                </a>
+                <a
+                  href="#products"
+                  className="flex h-11 items-center justify-center rounded-full border border-foreground/15 px-6 text-sm font-medium transition-colors hover:border-foreground/30 hover:bg-foreground/[.03]"
+                >
+                  See the work
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Research */}
-        <section id="research" className="border-t border-black/[.06] bg-zinc-50">
-          <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-24 lg:grid-cols-[1fr_1.4fr]">
-            <div>
-              <h2 className="text-3xl font-semibold tracking-tight">Research</h2>
-              <p className="mt-4 text-lg leading-8 text-muted">
-                We work on the parts of intelligence that don&apos;t have clean answers yet:
-                reasoning, memory, and how systems stay reliable once they leave the benchmark.
+        {/* Research — index list, paper style */}
+        <section id="research" className="scroll-mt-20">
+          <div className="mx-auto w-full max-w-6xl px-6 pb-24 pt-20">
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+              <div>
+                <SectionLabel index="01">Research</SectionLabel>
+                <h2 className="mt-6 text-3xl font-semibold tracking-tight sm:text-4xl">
+                  The parts of intelligence without clean answers yet.
+                </h2>
+                <p className="mt-5 max-w-md text-base leading-7 text-muted">
+                  Reasoning, memory, and how systems stay reliable once they leave the benchmark.
+                  Everything here is chosen because a product downstream needs the answer.
+                </p>
+              </div>
+              <ul className="divide-y divide-foreground/10 border-y border-foreground/10">
+                {research.map((item) => (
+                  <li key={item.index} className="group grid gap-2 py-7 sm:grid-cols-[64px_1fr] sm:gap-6">
+                    <span className="font-mono text-sm text-muted transition-colors group-hover:text-brand-deep">
+                      {item.index}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-semibold tracking-tight">{item.title}</h3>
+                      <p className="mt-1.5 max-w-lg text-sm leading-6 text-muted">{item.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Products */}
+        <section id="products" className="scroll-mt-20 border-t border-foreground/10 bg-zinc-50">
+          <div className="mx-auto w-full max-w-6xl px-6 py-24">
+            <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+              <div>
+                <SectionLabel index="02">Products</SectionLabel>
+                <h2 className="mt-6 max-w-lg text-3xl font-semibold tracking-tight sm:text-4xl">
+                  Research earns its keep when it ships.
+                </h2>
+              </div>
+              <p className="max-w-sm text-base leading-7 text-muted">
+                Everything we learn feeds directly into tools people put in front of real work.
               </p>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {[
-                {
-                  title: "Reasoning under uncertainty",
-                  body: "Getting models to know what they don't know, and to act sensibly when the ground is shifting.",
-                },
-                {
-                  title: "Long-horizon memory",
-                  body: "Systems that carry context across days and tasks instead of forgetting the moment the window fills.",
-                },
-                {
-                  title: "Evaluation that means something",
-                  body: "Measuring the behavior you actually care about, not the proxy that happens to be easy to score.",
-                },
-                {
-                  title: "Human-model interaction",
-                  body: "The design questions that decide whether a capable model becomes a tool people trust.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="rounded-2xl border border-black/[.07] bg-white p-6">
-                  <h3 className="font-semibold">{item.title}</h3>
+            <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/10 sm:grid-cols-3">
+              {products.map((item) => (
+                <div key={item.title} className="group flex flex-col bg-white p-8 transition-colors hover:bg-zinc-50">
+                  <span className="font-mono text-xs text-muted">{item.index}</span>
+                  <div className="mt-10 h-1 w-8 rounded-full bg-brand transition-all duration-300 group-hover:w-14" />
+                  <h3 className="mt-4 text-lg font-semibold tracking-tight">{item.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted">{item.body}</p>
                 </div>
               ))}
@@ -90,73 +212,67 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Products */}
-        <section id="products" className="mx-auto w-full max-w-6xl px-6 py-24">
-          <h2 className="text-3xl font-semibold tracking-tight">Products</h2>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">
-            Research earns its keep when it ships. Everything we learn feeds directly into tools
-            people put in front of real work.
-          </p>
-          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-black/[.08] bg-black/[.08] sm:grid-cols-3">
-            {[
-              {
-                title: "Platform",
-                body: "The core models and APIs teams build on, tuned for reliability over demos.",
-              },
-              {
-                title: "Applications",
-                body: "End-to-end products for the workflows where good AI changes the day-to-day.",
-              },
-              {
-                title: "Partnerships",
-                body: "We take on a small number of hard problems with teams who own the domain.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="bg-white p-8">
-                <div className="mb-4 h-1.5 w-10 rounded-full bg-brand" />
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Approach */}
-        <section id="approach" className="border-y border-black/[.06] bg-zinc-50">
+        {/* Principles — dark editorial band */}
+        <section id="principles" className="scroll-mt-20 bg-foreground text-white">
           <div className="mx-auto w-full max-w-6xl px-6 py-24">
-            <h2 className="max-w-3xl text-3xl font-semibold leading-snug tracking-tight sm:text-4xl">
-              Small team, long attention span. We&apos;d rather ship one thing that holds up than
-              ten that impress for a week.
+            <SectionLabel index="03" onDark>
+              Principles
+            </SectionLabel>
+            <h2 className="mt-6 max-w-3xl text-3xl font-semibold leading-snug tracking-tight sm:text-5xl">
+              Small team. Long attention span.
             </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-              Research and product sit at the same table here. That&apos;s the whole idea behind the
-              name: taking raw capability and giving it a shape someone can hold.
+            <div className="mt-16 grid gap-10 border-t border-white/15 pt-10 sm:grid-cols-3">
+              {principles.map((item) => (
+                <div key={item.title}>
+                  <h3 className="text-base font-semibold text-brand">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-white/70">{item.body}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-16 max-w-2xl border-t border-white/15 pt-10 text-lg leading-8 text-white/80">
+              That&apos;s the whole idea behind the name: taking raw capability and giving it a
+              shape someone can hold.
             </p>
           </div>
         </section>
 
-        {/* Contact / CTA */}
-        <section id="contact" className="mx-auto w-full max-w-6xl px-6 py-28 text-center">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            Building something, or want to?
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-muted">
-            Tell us what you&apos;re working on. We read everything, and we answer the ones we can
-            help with.
-          </p>
-          <a
-            href="mailto:hello@shapeintelligence.ai"
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-brand-solid px-8 text-sm font-medium text-white transition-colors hover:bg-brand-solid-dark"
-          >
-            hello@shapeintelligence.ai
-          </a>
+        {/* Contact */}
+        <section id="contact" className="scroll-mt-20">
+          <div className="mx-auto w-full max-w-6xl px-6 py-28">
+            <div className="flex flex-col items-start justify-between gap-10 sm:flex-row sm:items-end">
+              <div>
+                <SectionLabel index="04">Contact</SectionLabel>
+                <h2 className="mt-6 max-w-xl text-3xl font-semibold tracking-tight sm:text-5xl">
+                  Building something, or want to?
+                </h2>
+                <p className="mt-5 max-w-md text-base leading-7 text-muted">
+                  Tell us what you&apos;re working on. We read everything, and we answer the ones we
+                  can help with.
+                </p>
+              </div>
+              <a
+                href="mailto:hello@shapeintelligence.ai"
+                className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-white transition-colors hover:bg-foreground/85"
+              >
+                hello@shapeintelligence.ai
+              </a>
+            </div>
+          </div>
         </section>
       </main>
 
-      <footer className="border-t border-black/[.06]">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 text-sm text-muted sm:flex-row">
-          <Image src="/shape-intelligence-logo-centered.svg" alt="Shape Intelligence" width={120} height={46} />
-          <p>© {new Date().getFullYear()} Shape Intelligence. All rights reserved.</p>
+      <footer className="border-t border-foreground/10">
+        <div className="mx-auto flex w-full max-w-6xl flex-col justify-between gap-8 px-6 py-10 sm:flex-row sm:items-center">
+          <Image src="/shape-intelligence-logo-centered.svg" alt="Shape Intelligence" width={110} height={42} />
+          <nav className="flex gap-8 font-mono text-xs uppercase tracking-[0.15em] text-muted">
+            <a href="#research" className="transition-colors hover:text-foreground">Research</a>
+            <a href="#products" className="transition-colors hover:text-foreground">Products</a>
+            <a href="#principles" className="transition-colors hover:text-foreground">Principles</a>
+            <a href="#contact" className="transition-colors hover:text-foreground">Contact</a>
+          </nav>
+          <p className="font-mono text-xs text-muted">
+            © {new Date().getFullYear()} Shape Intelligence
+          </p>
         </div>
       </footer>
     </div>
